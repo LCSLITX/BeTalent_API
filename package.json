@@ -9,6 +9,7 @@
     "build": "node ace build",
     "dev": "node ace serve --hmr",
     "test": "node ace test",
+    "unit-test": "node ace test unit",
     "test-coverage": "c8 node ./build/bin/test.js",
     "fresh-test": "node ace migration:fresh && node ace test",
     "lint": "eslint .",
