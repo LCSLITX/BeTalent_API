@@ -51,7 +51,7 @@ test.group('Signup', () => {
     response.assertStatus(201);
   })
 
-  test('User is not created with the same email', async ({ client, assert }) => {
+  test('User is not created with the same email', async ({ client }) => {
 
     const response = await client.post('/signup').json({
       "username":"user",

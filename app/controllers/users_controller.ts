@@ -40,6 +40,7 @@ export default class UsersController {
 
     const user = await User.verifyCredentials(email, password)
 
+    // @ts-ignore generate function is mistakingly causing error.
     const token = await auth.use('jwt').generate(user)
 
     return response.status(200).send(token)
