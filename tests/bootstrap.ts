@@ -17,7 +17,7 @@ import testUtils from '@adonisjs/core/services/test_utils'
 export const plugins: Config['plugins'] = [
   assert(),
   apiClient({ baseURL: `http://${env.get('HOST')}:${env.get('PORT')}` }),
-  pluginAdonisJS(app)
+  pluginAdonisJS(app),
 ]
 
 /**

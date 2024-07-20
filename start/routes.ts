@@ -20,6 +20,8 @@ router.post('/login', async (ctx: HttpContext) => {
   return await UsersController.login(ctx)
 })
 
-router.get('/me', async (ctx: HttpContext) => {
-  return await UsersController.me(ctx);
-}).use(middleware.auth())
+router
+  .get('/me', async (ctx: HttpContext) => {
+    return await UsersController.me(ctx)
+  })
+  .use(middleware.auth())

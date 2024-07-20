@@ -48,10 +48,9 @@ export interface JwtUserProviderContract<RealUser> {
   findById(identifier: string | number | BigInt): Promise<JwtGuardUser<RealUser> | null>
 }
 
-
-  /**
-   * The JWT guard to authenticate HTTP requests
-   */
+/**
+ * The JWT guard to authenticate HTTP requests
+ */
 export class JwtGuard<UserProvider extends JwtUserProviderContract<unknown>>
   implements GuardContract<UserProvider[typeof symbols.PROVIDER_REAL_USER]>
 {
@@ -61,7 +60,7 @@ export class JwtGuard<UserProvider extends JwtUserProviderContract<unknown>>
 
   constructor(ctx: HttpContext, userProvider: UserProvider, options: JwtGuardOptions) {
     this.#ctx = ctx
-    this.#userProvider = userProvider,
+    this.#userProvider = userProvider
     this.#options = options
   }
 
@@ -102,7 +101,7 @@ export class JwtGuard<UserProvider extends JwtUserProviderContract<unknown>>
 
     return {
       type: 'bearer',
-      token: token
+      token: token,
     }
   }
 
@@ -194,7 +193,9 @@ export class JwtGuard<UserProvider extends JwtUserProviderContract<unknown>>
    * This method is called by Japa during testing when "loginAs"
    * method is used to login the user.
    */
-  async authenticateAsClient(user: UserProvider[typeof symbols.PROVIDER_REAL_USER]): Promise<AuthClientResponse> {
+  async authenticateAsClient(
+    user: UserProvider[typeof symbols.PROVIDER_REAL_USER]
+  ): Promise<AuthClientResponse> {
     const token = await this.generate(user)
     return {
       headers: {
