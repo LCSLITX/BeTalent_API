@@ -188,7 +188,9 @@ Execute o seguinte comando:
 $ docker compose up
 # ou docker-compose up
 ```
-Observação: Se a porta padrão do MySQL (3306) já estiver ocupada, é necessário alterar a porta padrão do MySQL no arquivo `.env` (DB_PORT), bem como no arquivo `compose.yaml` ("3306:3306": altere apenas o lado esquerdo). 
+Observação: Se a porta padrão do MySQL (3306) já estiver ocupada, é necessário alterar a porta padrão do MySQL no arquivo `.env` (DB_PORT), bem como no arquivo `compose.yaml` ("3306:3306": altere apenas o lado esquerdo).
+
+Exemplo: se decidir alterar para a porta 3307. No arquivo `.env`, substitua `DB_PORT=3306` por `DB_PORT=3307`; e no `compose.yaml`, substitua `"3306:3306"` por `"3307:3306"`.
 
 </details>
 
