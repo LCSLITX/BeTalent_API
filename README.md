@@ -158,7 +158,7 @@ São requisitos básicos:
 
 Para instalar e executar o projeto localmente em ambiente de desenvolvimento, é preciso:
 - ter o Node.js, na versão 20.6 ou superior; e o NPM instalados na máquina.
-- ter um banco MySQL rodando localmente. Se não tiver, leia a seção [Execução dos testes](#execução-dos-testes) que contém instruções de como instanciar rapidamente.
+- ter um banco MySQL rodando localmente. Se não tiver, leia a seção [instalação e execução](#instalação-e-execução) que contém instruções de como instanciar rapidamente.
 
 ## Instalação e execução
 
