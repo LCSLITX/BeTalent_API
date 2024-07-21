@@ -424,7 +424,7 @@ test.group('produtos:', () => {
     assert.equal(product1.price, products[0].price)
   })
 
-  test('exclusão lógica ("soft delete") de um produto (delete);', async ({ assert, client }) => {
+  test('exclusão lógica ("soft delete") de um produto (delete);', async ({ client }) => {
     const id = 2
 
     // check if product is there
