@@ -195,3 +195,4 @@ $ npm run routes
 
 
 ## Database Entities Relationships Diagram
+![ER Diagram](./db_er_diagram.png)
