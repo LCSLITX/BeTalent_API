@@ -49,14 +49,14 @@ test.group('Sale', () => {
   ]
 
   for (const i in sales) {
-    test(`SUCCESSFUL attempt to CREATE sale ${parseInt(i)+1} WITH authentication`, async ({ client }) => {
-      const response = await client.post('/sale').json(sales[i])
-        .bearerToken(token)
+    test(`SUCCESSFUL attempt to CREATE sale ${Number.parseInt(i) + 1} WITH authentication`, async ({
+      client,
+    }) => {
+      const response = await client.post('/sale').json(sales[i]).bearerToken(token)
 
       response.assertStatus(201)
 
       await delay(1)
     })
   }
-
 })

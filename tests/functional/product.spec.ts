@@ -10,7 +10,7 @@ test.group('Product', () => {
       name: 'Produto A',
       brand: 'Brand A',
       model: 'BAPA',
-      price: 10.00,
+      price: 10.0,
     })
 
     response.assertStatus(401)
@@ -59,7 +59,7 @@ test.group('Product', () => {
         name: 'Produto B',
         brand: 'Brand A',
         model: 'BAPB',
-        price: 10.00,
+        price: 10.0,
       })
       .bearerToken(token)
 
@@ -73,7 +73,7 @@ test.group('Product', () => {
         name: 'Produto A',
         brand: 'Brand A',
         model: 'BAPA',
-        price: 11.00,
+        price: 11.0,
       })
       .bearerToken(token)
 
@@ -87,7 +87,7 @@ test.group('Product', () => {
         name: 'Produto C',
         brand: 'Brand A',
         model: 'BAPC',
-        price: 12.00,
+        price: 12.0,
       })
       .bearerToken(token)
 
@@ -103,21 +103,22 @@ test.group('Product', () => {
         name: 'Produto A',
         brand: 'Brand A',
         model: 'BAPA',
-        price: 11.00,
-      },{
+        price: 11.0,
+      },
+      {
         id: 1,
         name: 'Produto B',
         brand: 'Brand A',
         model: 'BAPB',
-        price: 10.00,
+        price: 10.0,
       },
       {
         id: 3,
         name: 'Produto C',
         brand: 'Brand A',
         model: 'BAPC',
-        price: 12.00,
-      }
+        price: 12.0,
+      },
     ])
 
     response.assertStatus(200)
@@ -131,7 +132,7 @@ test.group('Product', () => {
       name: 'Produto B',
       brand: 'Brand A',
       model: 'BAPB',
-      price: 10.00,
+      price: 10.0,
     })
 
     response.assertStatus(200)
@@ -144,7 +145,7 @@ test.group('Product', () => {
         name: 'AProduto B',
         brand: 'Brand A',
         model: 'ABAPB',
-        price: 15.00,
+        price: 15.0,
       })
       .bearerToken(token)
 
@@ -168,13 +169,14 @@ test.group('Product', () => {
         name: 'Produto A',
         brand: 'Brand A',
         model: 'BAPA',
-        price: 11.00,
-      },{
+        price: 11.0,
+      },
+      {
         id: 1,
         name: 'AProduto B',
         brand: 'Brand A',
         model: 'ABAPB',
-        price: 15.00,
+        price: 15.0,
       },
     ])
 
@@ -184,11 +186,10 @@ test.group('Product', () => {
         name: 'Produto C',
         brand: 'Brand A',
         model: 'BAPC',
-        price: 12.00,
+        price: 12.0,
       },
     ])
 
     response.assertStatus(200)
   })
-
 })

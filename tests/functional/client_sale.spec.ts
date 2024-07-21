@@ -14,7 +14,9 @@ test.group('Client-Sale', () => {
     token = response.body().token
   })
 
-  test('SUCCESSFUL attempt to GET a client and its sales ordered by most recent first WITH authentication', async ({ client }) => {
+  test('SUCCESSFUL attempt to GET a client and its sales ordered by most recent first WITH authentication', async ({
+    client,
+  }) => {
     const response = await client.get('/client/1').bearerToken(token)
 
     response.assertBodyContains({
@@ -36,5 +38,4 @@ test.group('Client-Sale', () => {
 
     response.assertStatus(200)
   })
-
 })
