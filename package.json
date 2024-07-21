@@ -16,7 +16,8 @@
     "lint-fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "routes": "node ace list:routes"
   },
   "imports": {
     "#controllers/*": "./app/controllers/*.js",

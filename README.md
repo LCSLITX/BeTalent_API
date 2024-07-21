@@ -97,7 +97,7 @@ $ npm install
 
 # Antes de prosseguir configure o arquivo .env com as credenciais do banco de dados
 
-# Executar as migrations
+# Executar as migrations. ATENÇÃO: Este comando apaga os dados do banco configurado no arquivo .env.
 $ node ace migration:run
 
 # Executar o servidor
@@ -187,4 +187,11 @@ São requisitos básicos:
 # INCOMPLETO
 ## Detalhamento das rotas
 
-## ER Diagram DB
+```bash
+# Utilize o seguinte comando para visualizar as rotas disponíveis no projeto
+$ npm run routes
+```
+
+
+
+## Database Entities Relationships Diagram
