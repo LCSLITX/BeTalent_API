@@ -16,8 +16,10 @@ export default class UsersController {
     let user
     try {
       user = await User.create(payload)
+      
     } catch (e) {
-      // e.sql exposes hashed password
+      // e.sql exposes hashed password, even if user model
+      // has password column set to `serializeAs: null`.
       delete e.sql
       return response.status(400).send({ error: e })
     }
