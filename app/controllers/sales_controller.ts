@@ -13,8 +13,8 @@ export default class SalesController {
     let list
 
     try {
-      list = await Sale.all()
-      list.map((p) => p.serializeAttributes({ omit: ['createdAt', 'updatedAt'] }))
+      const l = await Sale.all()
+      list = l.map((p) => p.serializeAttributes({ omit: ['createdAt', 'updatedAt'] }))
     } catch (e) {
       return response.status(400).send({ error: e })
     }
