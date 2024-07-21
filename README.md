@@ -1,17 +1,16 @@
 # BeTalent_API
 
-API Restful desenvolvida em NodeJS e TypeScript com framework Adonis.JS v6 e Banco de Dados MySQL para atender a desafio técnico de backend proposto por [BeTalent.tech](https://betalent.tech).
+API Restful desenvolvida em NodeJS e TypeScript com framework Adonis.JS v6 e Banco de Dados MySQL para atender a desafio técnico para vaga de backend proposto por [BeTalent.tech](https://betalent.tech).
 
 
 ## Índice
 
-- [Enunciado do desafio proposto](#enunciado-do-desafio-proposto)
-- [Cumprimento dos requisitos](#cumprimento-dos-requisitos)
-
+- Enunciado do desafio proposto
+- Cumprimento dos requisitos
 - [Requisitos](#requisitos)
 - [Instalação e execução](#instalação-e-execução)
-  - [Docker](#caso-deseje-utilizar-docker-recomendado)
-  - [Sem Docker](#se-decidir-prosseguir-sem-o-docker)
+  - Docker
+  - Sem Docker
 - [Execução dos testes](#execução-dos-testes)
 - [Detalhamento das rotas](#detalhamento-das-rotas)
 - [Database Entities Relationships Diagram](#database-entities-relationships-diagram)
