@@ -8,15 +8,20 @@
     "start": "node bin/server.js",
     "build": "node ace build",
     "dev": "node ace serve --hmr",
-    "test": "node ace test",
-    "cumprimento-desafio": "node ace migration:fresh && node ace test cumprimento_desafio",
-    "test-coverage": "c8 node ./build/bin/test.js",
-    "fresh-test": "node ace migration:fresh && node ace test",
+
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "format": "prettier --write .",
+
+    "test": "node ace test functional",
+    "test-fresh": "node ace migration:fresh && node ace test functional",
+    "test-cumprimento-desafio": "node ace migration:fresh && node ace test cumprimento_desafio",
+
+    "test-coverage": "c8 node ./build/bin/test.js",
+
     "typecheck": "tsc --noEmit",
     "tsc": "tsc",
+
     "routes": "node ace list:routes"
   },
   "imports": {

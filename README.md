@@ -79,60 +79,10 @@ O projeto deverá ser hospedado em um repositório no GitHub. O link do reposit�
 
 </details>
 
-# INCOMPLETO
-## Instalação e execução
-
-Para instalar e executar o projeto localmente em ambiente de desenvolvimento, é preciso:
-- ter o Node.js, versão 20.6 ou superior; e o NPM instalados na máquina.
-- ter um banco MySQL rodando localmente. Se não tiver, leia a seção [Execução dos testes](#execução-dos-testes) que contém instruções de como instanciar rapidamente.
-```
-# Clonar o repositório
-$ git clone git@github.com:LCSLITX/BeTalent_API.git
-
-# Acessar o diretório
-cd BeTalent_API
-
-# Instalar as dependências
-$ npm install
-
-# Antes de prosseguir configure o arquivo .env com as credenciais do banco de dados
-
-# Executar as migrations. ATENÇÃO: Este comando apaga os dados do banco configurado no arquivo .env.
-$ node ace migration:run
-
-# Executar o servidor
-$ npm run dev 
-# ou node ace serve
-```
-
-# INCOMPLETO
-## Execução dos testes
-
-Os testes funcionais se prestam a evidenciar o preenchimento dos requisitos do desafio proposto, bem como dos critérios de avaliação.
-
-Para executar os testes funcionais, é preciso uma instância do MySQL rodando localmente e um arquivo `.env` configurado com as credenciais de acesso.
-
-Para executar os testes de maneira fácil, é possível utilizar:
-1. O Dockerfile presente no repositório para iniciar uma instância MySQL. Para isso, execute o seguinte comando:
-
-    ```bash
-    $ command
-    ```
-2. O arquivo `.env.example`, que já conta com a configuração para acessar o banco criado pelo comando anterior. Basta renomear o arquivo para `.env`.
-
-Com o banco de dados rodando e o arquivo `.env` configurado, execute o seguinte comando:
-
-```bash
-# ATENÇÃO: Este comando irá executar as migrations e todos os testes constantes no
-# diretório e, consequentemente, apagar os dados do banco configurado no arquivo .env.
-$ npm run fresh-test
-```
-
+---
 
 <details>
-<summary>Atendimento dos requisitos.</summary>
-
-#### Atendimento dos requisitos
+<summary>Cumprimento dos requisitos.</summary>
 
 ##### Banco de dados
 O banco de dados deve ser estruturado à escolha do(a) candidato(a), mas minimamente deve conter:
@@ -183,9 +133,94 @@ São requisitos básicos:
 
 </details>
 
+---
 
 
-# INCOMPLETO
+## Requisitos
+
+Para instalar e executar o projeto localmente em ambiente de desenvolvimento, é preciso:
+- ter o Node.js, na versão 20.6 ou superior; e o NPM instalados na máquina.
+- ter um banco MySQL rodando localmente. Se não tiver, leia a seção [Execução dos testes](#execução-dos-testes) que contém instruções de como instanciar rapidamente.
+
+## Instalação e execução
+
+
+
+```
+# Clonar o repositório
+$ git clone git@github.com:LCSLITX/BeTalent_API.git
+
+# Acessar o diretório
+cd BeTalent_API
+
+# Instalar as dependências
+$ npm install
+```
+
+Renomeie o arquivo `.env.example` para `.env`. As variáveis já estão pré-configuradas para rodar com o banco na porta 3306.
+
+
+<details>
+<summary>Caso deseje utilizar Docker (Recomendado)</summary>
+
+Execute o seguinte comando:
+
+```bash
+# Este comando criará um container com o MySQL e outro 
+$ docker compose up
+# ou docker-compose up
+```
+Observação: Se a porta padrão do MySQL (3306) já estiver ocupada, é necessário alterar a porta padrão do MySQL no arquivo `.env` (DB_PORT), bem como no arquivo `compose.yaml` ("3306:3306": altere apenas o lado esquerdo). 
+
+</details>
+
+---
+
+<details>
+<summary>Se decidir prosseguir sem o Docker</summary>
+
+Configure o arquivo `.env` com as credenciais de acesso do banco de dados
+
+</details>
+
+---
+
+Depois que o banco estiver configurado e rodando, execute os seguintes comandos:
+
+```
+# Executar as migrations. ATENÇÃO: Este comando apaga os dados do banco configurado no arquivo .env.
+$ node ace migration:run
+
+# Executar o servidor
+$ npm run dev 
+# ou node ace serve
+```
+
+## Execução dos testes
+
+O projeto conta com duas suítes de testes: 1) funcionais e 2) cumprimento do desafio.
+
+Para executar os testes, é preciso uma instância do MySQL rodando localmente e o arquivo `.env` configurado com as credenciais de acesso.
+
+Os testes de cumprimento do desafio se prestam a evidenciar o preenchimento dos requisitos do desafio proposto, bem como dos critérios de avaliação.
+
+
+```bash
+# ATENÇÃO: Este comando irá executar as migrations e apagar os dados do banco configurado no arquivo .env.
+$ npm run test-cumprimento-desafio
+```
+
+
+
+```bash
+# ATENÇÃO: Este comando irá executar as migrations e apagar os dados do banco configurado no arquivo .env.
+$ npm run test-fresh
+```
+
+
+
+
+
 ## Detalhamento das rotas
 
 ```bash
@@ -210,3 +245,6 @@ requests.har
 requests_postman.json
 requests_insomnia.json
 ```
+
+
+## Atendimento dos requisitos
