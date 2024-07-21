@@ -1,0 +1,17 @@
+name: betalent_db
+
+services:
+    mysql:  
+        container_name: betalent_db
+        image: mysql:latest
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_ROOT_USER: root
+            MYSQL_DATABASE: betalent_db
+        volumes:
+            - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+            - db_data:/var/lib/mysql
+volumes:
+    db_data:

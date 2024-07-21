@@ -24,8 +24,8 @@ export default class ClientsController {
     let list
 
     try {
-      list = await Client.all()
-      list.map((c) => c.serializeAttributes({ pick: ['id', 'name', 'cpf'] }))
+      const l = await Client.all()
+      list = l.map((c) => c.serializeAttributes({ pick: ['id', 'name', 'cpf'] }))
     } catch (e) {
       return response.status(400).send({ error: e })
     }

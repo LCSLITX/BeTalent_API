@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "e083ca0a-0d9a-4583-85bf-14dedbe97a7c",
+		"name": "BeTalent_API",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19229419"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "localhost:3333/signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/signup",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/login",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/me",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "localhost:3333/clients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/clients",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/client",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/client/1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/client/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/client/4",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/client/4",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"client",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/client/1",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/client/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"client",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "localhost:3333/products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/products",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/product",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/product/8",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/product/8",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"product",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/product/3",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/product/3",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"product",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/product/2",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/product/2",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"product",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sale",
+			"item": [
+				{
+					"name": "localhost:3333/sales",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/sales",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3333/sale",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "insomnia/2023.5.8"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTcyMTUyMzI5OX0.5DAx-YJYQssZDVSb-FR-9XSczztajd4evYQqUubKHeA"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/sale",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"sale"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "http://localhost:3333",
+			"type": "any"
+		}
+	]
+}

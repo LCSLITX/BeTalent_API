@@ -16,9 +16,9 @@ export default class ProductsController {
     let list
 
     try {
-      list = await Product.all()
-      list
-        .map((p) => p.serializeAttributes({ pick: ['id', 'name', 'model', 'price'] }))
+      const l = await Product.all()
+      list = l
+        .map((p) => p.serializeAttributes({ pick: ['id', 'name', 'brand', 'model', 'price'] }))
         .sort((a, b) => a.name.localeCompare(b.name))
     } catch (e) {
       return response.status(400).send({ error: e })
