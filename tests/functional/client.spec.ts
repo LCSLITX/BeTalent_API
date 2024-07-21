@@ -3,19 +3,19 @@ import { test } from '@japa/runner'
 import './users/login.spec.js'
 
 test.group('Clients', () => {
-  let token: string;
+  let token: string
 
   test('FAILED attempt to CREATE a client WITHOUT authentication', async ({ client }) => {
     const response = await client.post('/client').json({
-      "name":"Qualquer Um",
-      "cpf": "000.000.000-01",
-      "street": "Rua tal",
-      "number": 1,
-      "city": "Ababwa",
-      "province": "prov",
-      "country": "bra",
-      "zipCode": "00000-001",
-      "phoneNumber": "0000-0001"
+      name: 'Qualquer Um',
+      cpf: '000.000.000-01',
+      street: 'Rua tal',
+      number: 1,
+      city: 'Ababwa',
+      province: 'prov',
+      country: 'bra',
+      zipCode: '00000-001',
+      phoneNumber: '0000-0001',
     })
 
     response.assertStatus(401)
@@ -29,8 +29,8 @@ test.group('Clients', () => {
 
   test('FAILED attempt to UPDATE a client WITHOUT authentication', async ({ client }) => {
     const response = await client.put('/client/1').json({
-      "name":"Qualquer Um Não",
-      "cpf": "000.000.000-10",
+      name: 'Qualquer Um Não',
+      cpf: '000.000.000-10',
     })
 
     response.assertStatus(401)
@@ -42,43 +42,49 @@ test.group('Clients', () => {
     response.assertStatus(401)
   })
 
-  test('Logged in and saved token', async (test) => {
-    const response = await test.client.post('/login').json({
-      "email": "user@email.com",
-      "password": "123456"
+  test('Logged in and saved token', async ({ client }) => {
+    const response = await client.post('/login').json({
+      email: 'user@email.com',
+      password: '123456',
     })
 
     token = response.body().token
-  });
+  })
 
   test('SUCCESSFUL attempt to CREATE a client WITH authentication', async ({ client }) => {
-    const response = await client.post('/client').json({
-      "name":"Qualquer Um",
-      "cpf": "000.000.000-01",
-      "street": "Rua tal",
-      "number": 1,
-      "city": "Ababwa",
-      "province": "prov",
-      "country": "bra",
-      "zipCode": "00000-001",
-      "phoneNumber": "0000-0001"
-    }).bearerToken(token)
+    const response = await client
+      .post('/client')
+      .json({
+        name: 'Qualquer Um',
+        cpf: '000.000.000-01',
+        street: 'Rua tal',
+        number: 1,
+        city: 'Ababwa',
+        province: 'prov',
+        country: 'bra',
+        zipCode: '00000-001',
+        phoneNumber: '0000-0001',
+      })
+      .bearerToken(token)
 
     response.assertStatus(201)
   })
 
   test('SUCCESSFUL attempt to CREATE a second client WITH authentication', async ({ client }) => {
-    const response = await client.post('/client').json({
-      "name":"Qualquer Dois",
-      "cpf": "000.000.000-02",
-      "street": "Rua tal",
-      "number": 2,
-      "city": "Ababwa",
-      "province": "prov",
-      "country": "bra",
-      "zipCode": "00000-002",
-      "phoneNumber": "0000-0002"
-    }).bearerToken(token)
+    const response = await client
+      .post('/client')
+      .json({
+        name: 'Qualquer Dois',
+        cpf: '000.000.000-02',
+        street: 'Rua tal',
+        number: 2,
+        city: 'Ababwa',
+        province: 'prov',
+        country: 'bra',
+        zipCode: '00000-002',
+        phoneNumber: '0000-0002',
+      })
+      .bearerToken(token)
 
     response.assertStatus(201)
   })
@@ -89,13 +95,14 @@ test.group('Clients', () => {
     response.assertBodyContains([
       {
         id: 2,
-        name: "Qualquer Dois",
-        cpf: "000.000.000-02",
-      },{
+        name: 'Qualquer Dois',
+        cpf: '000.000.000-02',
+      },
+      {
         id: 1,
-        name: "Qualquer Um",
-        cpf: "000.000.000-01",
-      }
+        name: 'Qualquer Um',
+        cpf: '000.000.000-01',
+      },
     ])
 
     response.assertStatus(200)
@@ -106,8 +113,8 @@ test.group('Clients', () => {
 
     response.assertBodyContains({
       id: 1,
-      name: "Qualquer Um",
-      cpf: "000.000.000-01",
+      name: 'Qualquer Um',
+      cpf: '000.000.000-01',
       sales: [],
     })
 
@@ -115,10 +122,13 @@ test.group('Clients', () => {
   })
 
   test('SUCCESSFUL attempt to UPDATE a client WITH authentication', async ({ client }) => {
-    const response = await client.put('/client/1').json({
-      "name":"Qualquer Um Não",
-      "cpf": "000.000.000-10",
-    }).bearerToken(token)
+    const response = await client
+      .put('/client/1')
+      .json({
+        name: 'Qualquer Um Não',
+        cpf: '000.000.000-10',
+      })
+      .bearerToken(token)
 
     response.assertStatus(200)
   })
@@ -129,26 +139,27 @@ test.group('Clients', () => {
     response.assertStatus(204)
   })
 
-  test('SUCCESSFUL attempt to GET an updated LIST of clients WITH authentication', async ({ client }) => {
+  test('SUCCESSFUL attempt to GET an updated LIST of clients WITH authentication', async ({
+    client,
+  }) => {
     const response = await client.get('/clients').bearerToken(token)
 
     response.assertBodyContains([
       {
         id: 1,
-        name: "Qualquer Um Não",
-        cpf: "000.000.000-10",
-      }
+        name: 'Qualquer Um Não',
+        cpf: '000.000.000-10',
+      },
     ])
 
     response.assertBodyNotContains([
       {
         id: 2,
-        name: "Qualquer Dois",
-        cpf: "000.000.000-02",
-      }
+        name: 'Qualquer Dois',
+        cpf: '000.000.000-02',
+      },
     ])
 
     response.assertStatus(200)
   })
-
 })
