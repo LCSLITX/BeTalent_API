@@ -1,5 +1,24 @@
 # BeTalent_API
+
 API Restful desenvolvida em NodeJS e TypeScript com framework Adonis.JS v6 e Banco de Dados MySQL para atender a desafio técnico de backend proposto por [BeTalent.tech](https://betalent.tech).
+
+
+## Índice
+
+- [Enunciado do desafio proposto](#enunciado-do-desafio-proposto)
+- [Cumprimento dos requisitos](#cumprimento-dos-requisitos)
+
+- [Requisitos](#requisitos)
+- [Instalação e execução](#instalação-e-execução)
+  - [Docker](#caso-deseje-utilizar-docker-recomendado)
+  - [Sem Docker](#se-decidir-prosseguir-sem-o-docker)
+- [Execução dos testes](#execução-dos-testes)
+- [Detalhamento das rotas](#detalhamento-das-rotas)
+- [Database Entities Relationships Diagram](#database-entities-relationships-diagram)
+- [Arquivos de exportação da coleção de requisições para clientes HTTP (Postman/Insomnia)](#arquivos-de-exportação-da-coleção-de-requisições-para-clientes-http-postmaninsomnia)
+
+
+---
 
 
 <details>
@@ -174,7 +193,6 @@ Observação: Se a porta padrão do MySQL (3306) já estiver ocupada, é necess�
 
 </details>
 
----
 
 <details>
 <summary>Se decidir prosseguir sem o Docker</summary>
@@ -183,12 +201,12 @@ Configure o arquivo `.env` com as credenciais de acesso do banco de dados
 
 </details>
 
----
 
 Depois que o banco estiver configurado e rodando, execute os seguintes comandos:
 
 ```
-# Executar as migrations. ATENÇÃO: Este comando apaga os dados do banco configurado no arquivo .env.
+# Executar as migrations. 
+# ATENÇÃO: Este comando apaga os dados do banco configurado no arquivo `.env`.
 $ node ace migration:run
 
 # Executar o servidor
@@ -198,7 +216,7 @@ $ npm run dev
 
 ## Execução dos testes
 
-O projeto conta com duas suítes de testes: 1) funcionais e 2) cumprimento do desafio.
+O projeto conta com duas suítes de testes: 1) `funcionais` e 2) `cumprimento do desafio`.
 
 Para executar os testes, é preciso uma instância do MySQL rodando localmente e o arquivo `.env` configurado com as credenciais de acesso.
 
@@ -206,14 +224,13 @@ Os testes de cumprimento do desafio se prestam a evidenciar o preenchimento dos 
 
 
 ```bash
-# ATENÇÃO: Este comando irá executar as migrations e apagar os dados do banco configurado no arquivo .env.
+# ATENÇÃO: Estes comandos irão executar as migrations e apagar
+# os dados do banco configurado no arquivo .env.
+
+# Executar os testes de cumprimento do desafio
 $ npm run test-cumprimento-desafio
-```
 
-
-
-```bash
-# ATENÇÃO: Este comando irá executar as migrations e apagar os dados do banco configurado no arquivo .env.
+# Executar os testes funcionais
 $ npm run test-fresh
 ```
 
@@ -223,8 +240,14 @@ $ npm run test-fresh
 
 ## Detalhamento das rotas
 
+
+
+
+
+
+Utilize o seguinte comando para visualizar as rotas disponíveis no projeto
+
 ```bash
-# Utilize o seguinte comando para visualizar as rotas disponíveis no projeto
 $ npm run routes
 ```
 
@@ -245,6 +268,3 @@ requests.har
 requests_postman.json
 requests_insomnia.json
 ```
-
-
-## Atendimento dos requisitos
