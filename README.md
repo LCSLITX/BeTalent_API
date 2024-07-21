@@ -240,12 +240,7 @@ $ npm run test-fresh
 
 ## Detalhamento das rotas
 
-
-
-
-
-
-Utilize o seguinte comando para visualizar as rotas disponíveis no projeto
+Você pode verificar a [documentação detalhada](https://documenter.getpostman.com/view/19229419/2sA3kUHhss) ou utilizar o seguinte comando para visualizar as rotas e métodos disponíveis no projeto.
 
 ```bash
 $ npm run routes
