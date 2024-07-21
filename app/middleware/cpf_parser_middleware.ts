@@ -11,7 +11,7 @@ export default class CpfParserMiddleware {
      */
     let cpf = ctx.request.input('cpf')
     if (cpf) {
-      cpf = cpf.replaceAll('.', '').replace('-', '');
+      cpf = cpf.replaceAll('.', '').replace('-', '')
       ctx.request.updateBody({ ...ctx.request.body(), cpf })
     }
 

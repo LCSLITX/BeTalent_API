@@ -3,10 +3,16 @@ import Telephone from '#models/telephone'
 import Address from '#models/address'
 import Sale from '#models/sale'
 import type { HttpContext } from '@adonisjs/core/http'
-import { clientCreateValidator, clientShowValidator, clientUpdateValidator, clientFilterValidator, telephoneCreateValidator, addressCreateValidator } from '#validators/client'
+import {
+  clientCreateValidator,
+  clientShowValidator,
+  clientUpdateValidator,
+  clientFilterValidator,
+  telephoneCreateValidator,
+  addressCreateValidator,
+} from '#validators/client'
 import * as utils from '../utils/dates.js'
 import db from '@adonisjs/lucid/services/db'
-
 
 export default class ClientsController {
   /**
@@ -15,12 +21,11 @@ export default class ClientsController {
    * @returns response
    */
   static async index({ response }: HttpContext) {
-    let list;
-    
-    try {
-      list = (await Client.all())
-        .map((c) => c.serializeAttributes({ pick: ['id', 'name', 'cpf'] }))
+    let list
 
+    try {
+      list = await Client.all()
+      list.map((c) => c.serializeAttributes({ pick: ['id', 'name', 'cpf'] }))
     } catch (e) {
       return response.status(400).send({ error: e })
     }
@@ -45,9 +50,9 @@ export default class ClientsController {
 
     if (filterByMonth && filterByMonth < 10) {
       fm = `0${filterByMonth}`
-    }    
+    }
 
-    let client;
+    let client
 
     try {
       const c = await Client.findOrFail(id)
@@ -76,7 +81,6 @@ export default class ClientsController {
       utils.sortByDates(serializedSales)
 
       client.sales = serializedSales
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Client with id ${id} not found` })
@@ -95,27 +99,35 @@ export default class ClientsController {
    */
   static async store({ request, response }: HttpContext) {
     const dataTelephone = request.only(['phoneNumber'])
-    const dataAddress = request.only(['street', 'number', 'complement', 'district', 'city', 'province', 'country', 'zipCode'])
+    const dataAddress = request.only([
+      'street',
+      'number',
+      'complement',
+      'district',
+      'city',
+      'province',
+      'country',
+      'zipCode',
+    ])
     const dataClient = request.only(['name', 'cpf'])
 
     const payloadTelephone = await telephoneCreateValidator.validate(dataTelephone)
     const payloadAddress = await addressCreateValidator.validate(dataAddress)
     const payloadClient = await clientCreateValidator.validate(dataClient)
 
-    let client;
+    let client
 
     try {
       await db.transaction(async (trx) => {
         const telephone = await Telephone.create({ ...payloadTelephone }, { client: trx })
         const telephoneId = telephone.id
-  
+
         const address = await Address.create({ ...payloadAddress }, { client: trx })
         const addressId = address.id
-  
+
         // @ts-ignore telephoneId and addressId are not being recognized as properties
         client = await Client.create({ ...payloadClient, telephoneId, addressId }, { client: trx })
       })
-
     } catch (e) {
       console.log(e)
       return response.status(400).send({ error: e })
@@ -136,11 +148,10 @@ export default class ClientsController {
 
     const payload = await clientUpdateValidator.validate(data)
 
-    let client;
+    let client
 
     try {
       client = await Client.updateOrCreate({ id }, payload)
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Client with id ${id} not found` })
@@ -163,7 +174,6 @@ export default class ClientsController {
     try {
       const client = await Client.findOrFail(id)
       await client.delete()
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Client with id ${id} not found` })

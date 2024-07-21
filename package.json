@@ -13,6 +13,7 @@
     "test-coverage": "c8 node ./build/bin/test.js",
     "fresh-test": "node ace migration:fresh && node ace test",
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "tsc": "tsc"

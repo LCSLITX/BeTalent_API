@@ -10,10 +10,10 @@ export default class Client extends BaseModel {
 
   @hasOne(() => Telephone)
   declare telephoneId: HasOne<typeof Telephone>
-   
+
   @hasOne(() => Address)
   declare addressId: HasOne<typeof Address>
-  
+
   @column()
   declare name: string
 
@@ -27,8 +27,15 @@ export default class Client extends BaseModel {
   declare updatedAt: DateTime
 
   @beforeSave()
-  public static async normalizeCpf(client: Client) {
-    const parsedCPF = client.cpf.slice(0, 3) + '.' + client.cpf.slice(3, 6) + '.' + client.cpf.slice(6, 9) + '-' + client.cpf.slice(9);
-    client.cpf = parsedCPF;
+  static async normalizeCpf(client: Client) {
+    const parsedCPF =
+      client.cpf.slice(0, 3) +
+      '.' +
+      client.cpf.slice(3, 6) +
+      '.' +
+      client.cpf.slice(6, 9) +
+      '-' +
+      client.cpf.slice(9)
+    client.cpf = parsedCPF
   }
 }

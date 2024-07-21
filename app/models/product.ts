@@ -19,7 +19,7 @@ export default class Product extends BaseModel {
   declare price: number
 
   @column.dateTime({ serializeAs: null })
-  public deletedAt!: DateTime
+  deletedAt!: DateTime
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -28,12 +28,12 @@ export default class Product extends BaseModel {
   declare updatedAt: DateTime
 
   @beforeFind()
-  public static softDeletesFind = softDeleteQuery;  
+  static softDeletesFind = softDeleteQuery
 
   @beforeFetch()
-  public static softDeletesFetch = softDeleteQuery;
-  
-  public async softDelete(column?: string) {
-    await softDelete(this, column);
+  static softDeletesFetch = softDeleteQuery
+
+  async softDelete(controlColumn?: string) {
+    await softDelete(this, controlColumn)
   }
 }

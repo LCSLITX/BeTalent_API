@@ -35,7 +35,6 @@ export const telephoneCreateValidator = vine.compile(
   })
 )
 
-
 /**
  * Validates the client show action
  */

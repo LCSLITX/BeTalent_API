@@ -9,7 +9,7 @@ export default class extends BaseSchema {
 
       table.integer('client_id').unsigned().references('clients.id').onDelete('CASCADE') // delete profile when user is deleted
       table.integer('product_id').unsigned().references('products.id').onDelete('CASCADE') // delete profile when user is deleted
-      
+
       table.integer('quantity').notNullable()
       table.float('unit_price').unsigned().notNullable()
       table.float('total_price').notNullable()

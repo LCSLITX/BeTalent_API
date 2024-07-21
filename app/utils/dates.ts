@@ -1,4 +1,4 @@
-import { ModelObject } from "@adonisjs/lucid/types/model"
+import { ModelObject } from '@adonisjs/lucid/types/model'
 
 function sortDates(b: ModelObject, a: ModelObject): number {
   const dA = new Date(a.createdAt)

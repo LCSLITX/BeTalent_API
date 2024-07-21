@@ -1,7 +1,10 @@
 import type { HttpContext } from '@adonisjs/core/http'
-import Product from '#models/product';
-import { productCreateValidator, productShowValidator, productUpdateValidator } from '#validators/product';
-
+import Product from '#models/product'
+import {
+  productCreateValidator,
+  productShowValidator,
+  productUpdateValidator,
+} from '#validators/product'
 
 export default class ProductsController {
   /**
@@ -10,21 +13,19 @@ export default class ProductsController {
    * @returns response
    */
   static async index({ response }: HttpContext) {
-    let list;
+    let list
 
     try {
-      list = (await Product.all())
+      list = await Product.all()
+      list
         .map((p) => p.serializeAttributes({ pick: ['id', 'name', 'model', 'price'] }))
         .sort((a, b) => a.name.localeCompare(b.name))
-
     } catch (e) {
       return response.status(400).send({ error: e })
-
     }
 
     return response.status(200).send(list)
   }
-
 
   /**
    * Show individual record
@@ -34,12 +35,11 @@ export default class ProductsController {
   static async show({ params, response }: HttpContext) {
     const { id } = await productShowValidator.validate(params)
 
-    let product;
+    let product
 
     try {
       const p = await Product.findOrFail(id)
       product = p?.serializeAttributes({ pick: ['id', 'name', 'brand', 'model', 'price'] })
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Product with id ${id} not found` })
@@ -50,7 +50,6 @@ export default class ProductsController {
 
     return response.status(200).send(product)
   }
-    
 
   /**
    * Handle form submission for the create action
@@ -62,19 +61,16 @@ export default class ProductsController {
 
     const payload = await productCreateValidator.validate(data)
 
-    let product;
+    let product
 
     try {
       product = await Product.create(payload)
-
     } catch (e) {
       return response.status(400).send({ error: e })
-
     }
 
     return response.status(201).send(product)
   }
-
 
   /**
    * Handle form submission for the edit action
@@ -87,11 +83,10 @@ export default class ProductsController {
 
     const payload = await productUpdateValidator.validate(data)
 
-    let product;
+    let product
 
     try {
       product = await Product.updateOrCreate({ id }, payload)
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Product with id ${id} not found` })
@@ -114,7 +109,6 @@ export default class ProductsController {
     try {
       const product = await Product.findOrFail(id)
       await product.softDelete()
-
     } catch (e) {
       if (e.code === 'E_ROW_NOT_FOUND') {
         return response.status(404).send({ message: `Client with id ${id} not found` })
