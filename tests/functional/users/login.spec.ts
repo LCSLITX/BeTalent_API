@@ -1,5 +1,7 @@
 import { test } from '@japa/runner'
 
+import './signup.spec.js'
+
 test.group('Login', () => {
   test('Login fails due to invalid e-mail', async ({ client }) => {
     const response = await client.post('/login').json({
