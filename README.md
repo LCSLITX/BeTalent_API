@@ -79,9 +79,17 @@ O projeto deverá ser hospedado em um repositório no GitHub. O link do reposit�
 
 </details>
 
+# INCOMPLETO
+## Instalação e execução
 
 
 
+# INCOMPLETO
+## Execução dos testes
 
+Para executar os testes funcionais, é preciso uma instância do MySQL rodando localmente e arquivo `.env` configurado com as credenciais de acesso.
 
+Para executar uma instância do MySQL de maneira fácil, é possível utilizar o Dockerfile presente no repositório. Para isso, execute o seguinte comando:
 
+```bash
+```
