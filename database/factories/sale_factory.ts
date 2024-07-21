@@ -1,3 +1,4 @@
+// @ts-nocheck
 import factory from '@adonisjs/lucid/factories'
 import Sale from '#models/sale'
 
