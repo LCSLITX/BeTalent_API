@@ -219,7 +219,7 @@ O projeto conta com duas suítes de testes: 1) `funcionais` e 2) `cumprimento do
 
 Para executar os testes, é preciso uma instância do MySQL rodando localmente e o arquivo `.env` configurado com as credenciais de acesso.
 
-Os testes de cumprimento do desafio se prestam a evidenciar o preenchimento dos requisitos do desafio proposto, bem como dos critérios de avaliação.
+Os testes de cumprimento do desafio se prestam a evidenciar o preenchimento dos critérios do desafio proposto, bem como dos critérios de avaliação.
 
 
 ```bash
