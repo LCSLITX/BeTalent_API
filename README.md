@@ -1,4 +1,4 @@
-# BeTalent-API
+# BeTalent_API
 API Restful desenvolvida em NodeJS e TypeScript com framework Adonis.JS v6 e Banco de Dados MySQL para atender a desafio técnico de backend proposto por [BeTalent.tech](https://betalent.tech).
 
 
@@ -123,7 +123,8 @@ Para executar os testes de maneira fácil, é possível utilizar:
 Com o banco de dados rodando e o arquivo `.env` configurado, execute o seguinte comando:
 
 ```bash
-# ATENÇÃO: Este comando irá executar as migrations e todos os testes constantes no diretório e, consequentemente, apagar os dados do banco configurado no arquivo .env.
+# ATENÇÃO: Este comando irá executar as migrations e todos os testes constantes no
+# diretório e, consequentemente, apagar os dados do banco configurado no arquivo .env.
 $ npm run fresh-test
 ```
 
@@ -196,3 +197,16 @@ $ npm run routes
 
 ## Database Entities Relationships Diagram
 ![ER Diagram](./db_er_diagram.png)
+
+
+## Arquivos de exportação da coleção de requisições para clientes HTTP (Postman/Insomnia)
+
+Para facilitar o uso da API, o repositório contém três arquivos de exportação para serem importados em clientes HTTP como Postman ou Insomnia.
+
+[Como importar no Postman](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-and-exporting-overview/) | [Como importar no Insomnia](https://docs.insomnia.rest/insomnia/import-export-data)
+
+```bash
+requests.har
+requests_postman.json
+requests_insomnia.json
+```
