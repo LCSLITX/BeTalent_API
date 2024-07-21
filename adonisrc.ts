@@ -66,6 +66,11 @@ export default defineConfig({
         name: 'functional',
         timeout: 30000,
       },
+      {
+        files: ['tests/cumprimento_desafio/**/*.spec(.ts|.js)'],
+        name: 'cumprimento_desafio',
+        timeout: 30000,
+      },
     ],
     forceExit: false,
   },

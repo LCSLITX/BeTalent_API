@@ -36,6 +36,12 @@ test.group('Clients', () => {
     response.assertStatus(401)
   })
 
+  test('FAILED attempt to GET a client WITHOUT authentication', async ({ client }) => {
+    const response = await client.get('/client/1')
+
+    response.assertStatus(401)
+  })
+
   test('FAILED attempt to DELETE a client WITHOUT authentication', async ({ client }) => {
     const response = await client.delete('/client/1')
 
