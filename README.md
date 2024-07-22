@@ -184,7 +184,8 @@ Renomeie o arquivo `.env.example` para `.env`. As variáveis já estão pré-con
 Execute o seguinte comando:
 
 ```bash
-# Este comando criará um container com o MySQL e outro 
+# Este comando criará um container para o banco de dados MySQL e uma database.
+# Para alterar o nome da database criada, altere o setup.sql no diretório .docker.
 $ docker compose up
 # ou docker-compose up
 ```
